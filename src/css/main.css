@@ -167,24 +167,19 @@ nav {
     }
   }
 }
-
-/********************LEFT BAR********************/
-
-.left-bar {
-  background: $light-gray;
-  padding: 0 15px;
+.main {
   position: relative;
-
   & > .logo-box {
     background: $light-blue;
     border-radius: 0 0 60px 60px;
     box-shadow: 11px 11px 31px 0 $black;
-    left: 57px;
+    left: 4%;
     margin: 0 auto;
     padding: 20px;
     position: absolute;
     top: -61px;
     width: 293px;
+    z-index: 55;
 
     & > img {
       display: block;
@@ -192,25 +187,48 @@ nav {
       width: 252px;
     }
   }
-
-  & > form {
-    padding-bottom: 20px;
-  }
-
-  & > .form-top-text {
-    margin-top: 120px;
-    text-align: center;
-  }
-
-  & > form label {
-    height: 10px;
-  }
-
-  & > form select {
-    padding: 0;
-  }
 }
+/********************LEFT BAR********************/
 
+.left-bar {
+  background: $light-gray;
+  padding: 0 15px;
+  position: relative;
+  & > .logo-box {
+    background: $light-blue;
+    border-radius: 0 0 60px 60px;
+    box-shadow: 11px 11px 31px 0 $black;
+    left: 4%;
+    margin: 0 auto;
+    padding: 20px;
+    position: absolute;
+    top: -61px;
+    width: 293px;
+    z-index: 55;
+
+    & > img {
+      display: block;
+      margin: 0 auto;
+      width: 252px;
+    }
+  }
+    & > form {
+      padding-bottom: 20px;
+    }
+
+    & > .form-top-text {
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    & > form label {
+      height: 10px;
+    }
+
+    & > form select {
+      padding: 0;
+    }
+}
 .btn-form {
   background-color: $light-blue;
   border-color: buttonface;
@@ -414,8 +432,8 @@ nav {
 
 @media screen and (max-width: 1200px) {
 
-  .left-bar .logo-box {
-    left: 15px;
+  .main .logo-box {
+    left: 1.5%;
   }
 
   .img-arrows {
@@ -465,16 +483,16 @@ nav {
     text-align: center;
   }
 
-  .left-bar .logo-box {
-    left: 0;
-    position: relative;
+  .main .logo-box {
+    left: 50%;
     top: 0;
+    transform: translateX(-150px);
   }
 
   .left-bar .form-top-text {
     margin-top: 40px;
   }
-
+  
   .pd-lr {
     padding-left: 15px;
     padding-right: 15px;
@@ -544,6 +562,18 @@ nav {
 
 @media screen and (max-width: 640px) {
 
+  .main .logo-box {
+    border-radius: 0 0 40px 40px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-100px);
+    width: 200px;
+
+    & > img {
+      width: 150px;
+    }
+  }
+  
   .tariff-box {
     float: none;
     margin: 20px auto;
@@ -573,6 +603,9 @@ nav {
       line-height: 38px;
     }
   }
+  .btn-form {
+    font-size: 22px;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -598,9 +631,7 @@ nav {
     width: 80vw;
   }
 }
-
-@media screen and (max-width: 360px) {
-
+@media screen and (max-width: 380px) {
   .select {
     width: 50%;
   }
@@ -610,8 +641,8 @@ nav {
   }
 
   .fbvideo {
-    height: 165px;
-    width: 80vw;
+    height: 130px;
+    width: 65vw;
   }
 
   .tariff {
@@ -625,6 +656,7 @@ nav {
     }
   }
 }
+
 
 /********************ABOUT********************/
 
@@ -686,11 +718,13 @@ nav {
       padding-bottom: 40px;
       padding-top: 0;
     }
-
+    & .right-bar {
+      padding: 170px 15px 50px;
+    }
     & .header-banner-box {
       box-shadow: 4px 4px 15px black;
       margin: 0;
-      top: 175px;
+      top: 0;
       z-index: 15;
     }
 
@@ -718,11 +752,9 @@ nav {
 @media screen and (max-width: 767px) {
 
   .about-page {
-
-    & .header-banner-box {
-      top: 30px;
+    & .right-bar {
+      padding-top: 160px;
     }
-
     & .form-top-text {
       margin-top: 30px;
     }
@@ -775,10 +807,6 @@ nav {
 
 /********************LOG IN********************/
 
-.log-in-page .right-bar {
-  padding-top: 50px;
-}
-
 .log-in-page .about-title,
 .log-in-form, .center-text {
   color: $black;
@@ -829,3 +857,27 @@ nav {
 }
 
 
+/* ////////////INDEX\\\\\\\\\\\\\\\\\\\ */
+
+.index {
+  & .left-bar {
+    padding: 170px 15px 20px;
+  }
+  & .form-top-text {
+    margin-top: 0;
+  }
+  & h2 {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .index {
+    & .left-bar {
+      padding: 140px 15px 20px;
+    }
+    & h2 {
+      font-size: 30px;
+    }
+  }
+}
