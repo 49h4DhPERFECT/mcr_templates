@@ -94,6 +94,10 @@ body {
   padding-right: 14px;
 }
 
+.container-height {
+  vertical-align: top;
+}
+
 /* //////////////HEADER NAV BURGER-NAV///////////////////// */
 
 header {
