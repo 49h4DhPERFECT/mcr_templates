@@ -1,5 +1,104 @@
-/**
- * this is the main CSS file
- * all other non-library CSS should be imported here
- * and not linked-to in the HTML
- **/
+/**/
+/* Variables */
+/**/
+$header-bg-color: #252f3c;
+
+$survey-form-gray: #f3f3f3;
+$survey-form-shadow: 0 0 .7rem -.1rem #555;
+
+$progress-bar-color: #64a4bf;
+
+/**/
+/* Base */
+/**/
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  /* font-size for the bosy has been set to 10px, so now it's easy to calculate rem balues */
+  font-size: 10px;
+}
+
+/**/
+/* Header */
+/**/
+.header {
+  background-color: $header-bg-color;
+  color: white;
+  padding: 1.4rem 1.5rem;
+  text-align: center;
+
+  &__title {
+     font-size: 3.2rem;
+     margin: 0;
+  }
+}
+
+/**/
+/* Survey */
+/**/
+.survey {
+
+  &__container {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  &__reward-description {
+    font-size: 1.6rem;
+    margin-bottom: 3em;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/**/
+/* Survey form */
+/**/
+.survey-form {
+  box-shadow: $survey-form-shadow;
+
+  &__header {
+    background-color: $survey-form-gray;
+    padding: 1rem 0;
+  }
+
+  &__header-text {
+     font-size: 1.4rem;
+     font-weight: bold;
+     margin-bottom: .3rem;
+     text-align: center;
+     text-transform: uppercase;
+  }
+
+  &__footer {
+     background-color: $survey-form-gray;
+     text-align: center;
+  }
+
+  &__button {
+    background: linear-gradient(to bottom, #f1d89b 0%, #e1be73 100%);
+    border: 1px solid #323332;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+/**/
+/* Progress bar */
+/**/
+.progress-bar {
+
+  &__container {
+     background-color: white;
+     height: 2.3rem;
+     width: 75%;
+  }
+
+  &__inner {
+     background-color: $progress-bar-color;
+     float: left;
+     height: 100%;
+     width: 14.2857%;
+  }
+}

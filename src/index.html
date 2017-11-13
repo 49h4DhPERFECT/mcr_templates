@@ -4,14 +4,63 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Amazon Prime Survey</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-    <!-- template markup below -->
-
-    <!-- template markup ends -->
+    <header class="header">
+      <h1 class="header__title">
+        Amazon Prime Survey
+      </h1>
+    </header>
+    <section class="survey">
+      <div class="container survey__container">
+        <div class="row relative">
+          <div class="col-xs-4">
+            <img src="#" alt="Support">
+          </div>
+          <p class="col-xs-8 survey__reward-description">
+            Tell us what you think of Amazon Prime in this 30 second questionnaire, and to say "thank you", we'll offer you an <b>exclusive reward</b> worth over $50...
+          </p>
+        </div>
+        <form
+          class="survey__form survey-form"
+        action="#"
+        method="post"
+        name="#">
+          <div class="survey-form__header">
+            <p class="survey-form__header-text">Progress (1/7)</p>
+            <div class="center-block progress-bar__container">
+              <div class="progress-bar__inner"></div>
+            </div>
+          </div>
+          <h2 class="survey-form__title">
+            Select your gender:
+          </h2>
+          <label class="survey-form__checkbox custom-checkbox">
+            <input type="checkbox" value="Male">
+          </label>
+          <label class="survey-form__checkbox custom-checkbox">
+            <input type="checkbox" value="Female">
+          </label>
+          <label class="survey-form__checkbox custom-checkbox">
+            <input type="checkbox" value="Other">
+          </label>
+          <div class="survey-form__footer">
+            <button class="survey-form__button">
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer class="footer">
+      <img src="images/secured.png" alt="Secured">
+      <p class="footer__reserved">C All rights reserved.</p>
+      <p class="footer__legal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eligendi minus quis! Excepturi exercitationem mollitia, quaerat tempora vero voluptatem. Beatae ducimus expedita hic ipsa, neque nisi quae qui ut? At?</p>
+    </footer>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
   </body>
