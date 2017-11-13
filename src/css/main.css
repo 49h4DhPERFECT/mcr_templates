@@ -1,12 +1,19 @@
 /**/
 /* Variables */
 /**/
+$gray: gray;
+
 $header-bg-color: #252f3c;
 
 $survey-form-gray: #f3f3f3;
 $survey-form-shadow: 0 0 .7rem -.1rem #555;
+$survey-form-border-color: #e1e1e1;
 
 $progress-bar-color: #64a4bf;
+
+$button-first-color: #f1d89b;
+$button-second-color: #e1be73;
+$button-border-color: #323332;
 
 /**/
 /* Base */
@@ -14,8 +21,23 @@ $progress-bar-color: #64a4bf;
 body {
   background-color: white;
   font-family: 'Open Sans', sans-serif;
-  /* font-size for the bosy has been set to 10px, so now it's easy to calculate rem balues */
+  /* font-size for the body has been set to 10px, so now it's easy to calculate rem balues */
   font-size: 10px;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+/**/
+/* Helpers */
+/**/
+.relative {
+  position: relative;
+}
+
+.static {
+  position: static;
 }
 
 /**/
@@ -38,15 +60,31 @@ body {
 /**/
 .survey {
 
-  &__container {
-    padding-left: .5rem;
-    padding-right: .5rem;
+  &__girl {
+    bottom: 0;
+    left: 2rem;
+    position: absolute;
+    width: 14rem;
+    z-index: 1;
+
+    @media (min-width: 450px) {
+      left: 4rem;
+    }
+
+    @media (min-width: 1200px) {
+      left: 6rem;
+      width: 20rem;
+    }
   }
 
   &__reward-description {
     font-size: 1.6rem;
     margin-bottom: 3em;
     padding: 1rem 1.5rem;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 5em;
+    }
   }
 }
 
@@ -69,18 +107,38 @@ body {
      text-transform: uppercase;
   }
 
+  &__title {
+     font-size: 3.3rem;
+     margin-bottom: 2rem;
+     margin-top: 2.5rem;
+     padding-left: 2rem;
+     text-transform: capitalize;
+  }
+
   &__footer {
      background-color: $survey-form-gray;
+     border-top: 1px solid $survey-form-border-color;
+     padding: 1rem 0;
      text-align: center;
   }
 
   &__button {
-    background: linear-gradient(to bottom, #f1d89b 0%, #e1be73 100%);
-    border: 1px solid #323332;
+    background: linear-gradient(to bottom, $button-first-color 0%, $button-second-color 100%);
+    border: 1px solid $button-border-color;
     border-radius: 5px;
     display: inline-block;
+    font-size: 1.2rem;
     font-weight: bold;
+    min-width: 14rem;
+    padding: 1em;
     text-transform: uppercase;
+    transition: background .25s ease-in-out;
+
+    &:active,
+    &:focus,
+    &:hover {
+       background: linear-gradient(to bottom, $button-second-color 0%, $button-first-color 100%);
+    }
   }
 }
 
@@ -100,5 +158,73 @@ body {
      float: left;
      height: 100%;
      width: 14.2857%;
+  }
+}
+
+/**/
+/* Custom checkbox */
+/**/
+.custom-checkbox {
+  color: $gray;
+  cursor: pointer;
+  display: block;
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 3.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 9rem;
+  position: relative;
+
+  &:last-of-type {
+    margin-bottom: 3rem;
+  }
+
+  &:before {
+    border: 1px solid $gray;
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    height: 3.5rem;
+    left: 3.5rem;
+    position: absolute;
+    top: 0;
+    transition: background-color .25s ease-in-out;
+    width: 3.5rem;
+  }
+}
+
+/* Shame: too long selector. Used to create custom select */
+/* stylelint-disable-next-line selector-max-specificity */
+input[type=radio]:checked + .custom-checkbox {
+
+  /* stylelint-disable-next-line selector-max-specificity */
+  &:before {
+    background-color: $gray;
+  }
+}
+
+/**/
+/* Footer */
+/**/
+.footer {
+  text-align: center;
+
+  &__container {
+    padding: 3rem 1.5rem 1rem;
+  }
+
+  &__secured {
+    margin-bottom: 1rem;
+    width: 5rem;
+  }
+
+  &__reserved {
+    text-align: left;
+    text-transform: capitalize;
+  }
+
+  &__legal {
+    margin-bottom: 0;
+    text-align: left;
   }
 }

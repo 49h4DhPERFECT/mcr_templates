@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#252f3c">
     <title>Amazon Prime Survey</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
   </head>
@@ -16,12 +17,12 @@
       </h1>
     </header>
     <section class="survey">
-      <div class="container survey__container">
+      <div class="container">
         <div class="row relative">
-          <div class="col-xs-4">
-            <img src="#" alt="Support">
+          <div class="col-xs-5 col-sm-4 static">
+            <img class="survey__girl" src="images/callcenter.png" alt="Support">
           </div>
-          <p class="col-xs-8 survey__reward-description">
+          <p class="col-xs-7 col-sm-8 col-lg-7 survey__reward-description">
             Tell us what you think of Amazon Prime in this 30 second questionnaire, and to say "thank you", we'll offer you an <b>exclusive reward</b> worth over $50...
           </p>
         </div>
@@ -39,14 +40,17 @@
           <h2 class="survey-form__title">
             Select your gender:
           </h2>
-          <label class="survey-form__checkbox custom-checkbox">
-            <input type="checkbox" value="Male">
+          <input type="radio" value="Male" id="male" name="gender" checked>
+          <label class="survey-form__checkbox custom-checkbox" for="male">
+            Male
           </label>
-          <label class="survey-form__checkbox custom-checkbox">
-            <input type="checkbox" value="Female">
+          <input type="radio" value="Female" id="female" name="gender">
+          <label class="survey-form__checkbox custom-checkbox" for="female">
+            Female
           </label>
-          <label class="survey-form__checkbox custom-checkbox">
-            <input type="checkbox" value="Other">
+          <input type="radio" value="Other" id="other" name="gender">
+          <label class="survey-form__checkbox custom-checkbox" for="other">
+            Other
           </label>
           <div class="survey-form__footer">
             <button class="survey-form__button">
@@ -57,9 +61,13 @@
       </div>
     </section>
     <footer class="footer">
-      <img src="images/secured.png" alt="Secured">
-      <p class="footer__reserved">C All rights reserved.</p>
-      <p class="footer__legal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eligendi minus quis! Excepturi exercitationem mollitia, quaerat tempora vero voluptatem. Beatae ducimus expedita hic ipsa, neque nisi quae qui ut? At?</p>
+      <div class="container footer__container">
+        <img class="footer__secured" src="images/secure-site.jpg" alt="Secured">
+        <p class="footer__reserved">©2017 All rights reserved.</p>
+        <p class="footer__legal">
+          We are affiliated nor partnered with Amazon. Amazon has not authored, participated in, or in any way reviewed this advertisement ot authorized it. The trial products offered on the last page pay this website for orders placed. * S&H charges do apply. Some of the products described on this site have terms regarding continued billing after free trial period ends, This is referred to as negative option, or continuity billing. Therefore, it is important to ensure that you are fully aware of the terms associated with each product before you order. See manufacturer's website for full terms and conditions before ordering your free trial as these vary by product. Please keep in mind that these are separated companies and we are not the best source for information about orders or specific policies. Because there companies control their own policies, shipping and other fees may change periodically.
+        </p>
+      </div>
     </footer>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
